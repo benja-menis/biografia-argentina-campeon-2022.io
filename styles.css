@@ -1,0 +1,212 @@
+/* VARIABLES DE COLOR */
+:root {
+  --negro: #0b0b0b;
+  --celeste: #6ec1e4;
+  --qatar: #8a1538;
+  --blanco: #f1f1f1;
+  --gris: #222;
+  --transparente-negro: rgba(0,0,0,0.7);
+}
+
+/* RESET GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--negro);
+  color: var(--blanco);
+  line-height: 1.8;
+  scroll-behavior: smooth;
+}
+
+/* CONTENEDOR GENERAL */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(to bottom, var(--transparente-negro), rgba(0,0,0,0.2)), url("images/hero.jpg") center/cover no-repeat;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  color: var(--celeste);
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+}
+
+.hero span {
+  display: block;
+  color: var(--qatar);
+  font-size: 1.5rem;
+  margin-top: 10px;
+  letter-spacing: 4px;
+  font-weight: 600;
+}
+
+.hero p {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  max-width: 700px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 16px 40px;
+  background: linear-gradient(90deg, var(--celeste), var(--qatar));
+  color: var(--negro);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--celeste);
+}
+
+/* SECCIONES */
+.contexto,
+.capitulo,
+.eliminatorias,
+.final {
+  padding: 100px 0;
+  position: relative;
+}
+
+.oscuro {
+  background-color: #111;
+}
+
+/* GRID DINÁMICO */
+.grid {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.texto {
+  flex: 1 1 500px;
+  padding: 10px;
+}
+
+.texto h2, .texto h3 {
+  color: var(--celeste);
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+}
+
+.texto p {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+/* RESULTADO DEL PARTIDO */
+.resultado {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: var(--qatar);
+  font-weight: 700;
+  font-size: 1.2rem;
+  background: var(--gris);
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
+/* IMAGENES */
+.imagenes {
+  flex: 1 1 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.imagenes img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.5s, filter 0.5s;
+  cursor: pointer;
+}
+
+.imagenes img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+/* ELIMINATORIAS Y PARTIDOS */
+.partido {
+  padding: 80px 0;
+  border-top: 2px solid var(--gris);
+}
+
+.partido.oscuro {
+  background-color: #111;
+}
+
+/* FINAL */
+.final {
+  background: linear-gradient(to bottom, var(--qatar), var(--negro));
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.final .marcador {
+  font-size: 2.5rem;
+  margin: 40px 0;
+  font-weight: 700;
+  color: var(--blanco);
+}
+
+.epico {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 20px;
+  color: var(--celeste);
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--gris);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .grid {
+    flex-direction: column;
+  }
+  .imagenes, .texto {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero span {
+    font-size: 1.2rem;
+  }
+  .btn {
+    padding: 12px 30px;
+    font-size: 0.9rem;
+  }
+}
